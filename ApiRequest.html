@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style = "background-color: rgb(53, 49, 92) ;  color: blanchedalmond;">
+
+  <h1>CARD</h1> 
+  <button id = "click">click</button>
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    //API
+    //Application Programming Interfaces (APIs) are constructs made available in programming 
+    // languages to allow developers to create complex functionality more easily. 
+
+
+    //----XMLHttpRequest-----//
+   //XMLHttpRequest (XHR) objects are used to interact with servers. You can retrieve data from a URL without having to do a full page refresh. This enables a
+   //  Web page to update just part of a page without disrupting what the user is doing.
+
+    const requestUrl =  "https://api.github.com/users/AaminSingh"
+     const xhr = new XMLHttpRequest()                        //to create a request 
+      xhr.open('GET',requestUrl)                   //it is to tell the type of request we want to send
+         
+     //let data;              
+      xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);                      //it tracks the state of the request and displays the state 
+        if(xhr.readyState === 4){
+             data = JSON.parse(this.responseText)
+            console.log( data );
+            console.log( data.followers);
+            console.log(data.following);
+            console.log(data.avatar_url);
+        }
+      }
+      xhr.send()
+      //document.querySelector('click').addEventListener('click',function(){
+      //  numberofFollowers();
+       // myavatar();
+       // console.log( data.followers);
+       // console.log(data.avatar_url);
+      //})
+
+     // ACBOUT console.log()
+     //it is not in the core javascript rather it is a debugging tool of browser which is injected by the js at runtime
+</script>
+</html> 
