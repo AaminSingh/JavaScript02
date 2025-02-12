@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Javascript 02</h1>
+    <button id = "stop">Stop</button>
+    </body>
+    <script>
+       // setTimeout()-------------->not a part of the core javascript 
+       //setInterval---------------->also not a part of core js
+       //clearInterval
+       //clearTimeout----------------------->these two are part of the above fxn 
+
+
+       // setTimeout(function(){
+       // console.log("Aamin");
+       // },2000 )
+
+       const sayAamin = function(){
+        console.log("Aamin");
+       }
+       const changeText  = function(){
+        document.querySelector('h1').innerHTML = "Best JS series"} 
+
+      const changeMe =  setTimeout(changeText,2000)
+      setTimeout(sayAamin,4000)
+        
+       document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(changeMe)
+        console.log("STOPPED")
+       })
+       
+    </script>
+</html>
