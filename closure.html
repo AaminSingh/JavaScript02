@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body style="background-color: #3232;">
+    <button id = "orange">Orange</button>
+    <button id = "green">Green</button>
+
+</body>
+<script>
+    // closure 
+    /*A closure is the combination of a function bundled together (enclosed) with
+      references to its surrounding state (the lexical environment). In other words,
+     a closure gives a function access to its outer scope. In JavaScript, closures are 
+    created every time a function is created, at function creation time.*/
+
+
+   /* function init() {
+        let name = "Mozilla";  // name is a local variable created by init
+        function displayName() {
+                               // displayName() is the inner function, that forms a closure
+            console.log(name); // use variable declared in the parent function
+  }
+        displayName();
+}
+        init();*/
+
+
+       /** function outer(){
+            let username = "hitesh"
+            console.log("Outer", secret)
+            function inner(){  
+                let secret = "my2428"                        // no sharing between the inner fxn 
+                console.log("inner", username);
+            }
+            function innerTwo(){
+                console.log("innerTwo", username);
+            }
+            inner()
+        }
+        outer()
+        console.log(username);
+*/
+
+/*function makeFunc() {
+  const name = "Mozilla";                             
+  function displayName() {
+    console.log(name);
+  }
+  return displayName;                                //here the inner fxn is returned
+}
+const myFunc = makeFunc();                          // this function is the reference of the displayname() so as it has lexical scoping it will also carry the scope of its outer fxn
+myFunc();*/
+</script>
+<script>
+           document.getElementById("orange").onclick = function(){
+            document.body.style.backgroundColor = `orange`
+           }
+           document.getElementById("green").onclick = function(){
+            document.body.style.backgroundColor = `green`
+           }
+</script>
+</html>
